@@ -54,8 +54,8 @@ export default function ObjectCode() {
   const purpleColor = "text-[#9980FF]";
 
   return (
-    <div className='w-2xl'>
-      <div className='min-h-151 pb-4 bg-[#0d111f] rounded-lg overflow-hidden'>
+    <div className='lg:w-2xl'>
+      <div className='min-h-151 pb-4 bg-[#0d111f] rounded-lg overflow-auto'>
         {/* Window Header */}
         <div className='px-4 py-2 bg-[#2d2d2d] flex items-center'>
           <div className='flex space-x-1.5 mr-3'>
@@ -72,9 +72,7 @@ export default function ObjectCode() {
             dispatch({ type: "OBJECT" });
           }}>
           <div
-            className={`text-sm font-mono flex items-center hover:bg-[#3D3D3D] ${
-              !state.object ? "w-100" : "w-17"
-            } overflow-x-auto`}>
+            className={`text-sm font-mono flex items-center hover:bg-[#3D3D3D]  `}>
             <CollapsableBtn state={state.object} />
             {!state.object ? (
               <div>
