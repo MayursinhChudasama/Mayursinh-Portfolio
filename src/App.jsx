@@ -4,7 +4,8 @@ import Navbar from "./components/common/Navbar";
 import Particles from "./components/GSAP/Particles";
 import ProfileCard from "./components/GSAP/ProfileCard";
 import TextCursor from "./components/GSAP/TextCursor";
-import mayursinh_chudasama from "./mayursinh-chudasama.png";
+import mayursinh_chudasama from "./assets/mayursinh-chudasama.png";
+import SkillsContainer from "./components/Skills/SkillsContainer";
 
 export default function App() {
   return (
@@ -22,7 +23,7 @@ export default function App() {
       <Navbar />
       {/* ABOUT */}
       <div className='relative w-full overflow-hidden bg-transparent text-center   mt-2'>
-        <div className='absolute top-0 left-0 right-0 -z-1 w-screen h-[90%]'>
+        <div className='absolute top-0 left-0 right-0 -z-1 w-screen h-full'>
           <Particles
             particleColors={["#ffffff", "#ffffff"]}
             particleCount={200}
@@ -59,7 +60,7 @@ export default function App() {
       </div>
       {/* SKILLS */}
       <div className='mt-52 h-200 bg-white text-center border-1 border-white '>
-        <p className='text-2xl font-bold'>SKILLS</p>
+        <SkillsContainer />
       </div>
     </div>
   );

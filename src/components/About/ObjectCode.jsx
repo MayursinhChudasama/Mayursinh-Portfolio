@@ -51,7 +51,6 @@ export default function ObjectCode() {
     info: true,
     skills: { obj: true, languages: true, libraries: true, styling: true },
   });
-  console.log(state);
   const purpleColor = "text-[#9980FF]";
 
   return (

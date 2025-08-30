@@ -1,5 +1,5 @@
 import CardNav from "../GSAP/CardNav";
-import logo from "../../mayursinh-chudasama.png";
+import logo from "../../assets/mayursinh-chudasama.png";
 
 export default function Navbar() {
   const items = [
