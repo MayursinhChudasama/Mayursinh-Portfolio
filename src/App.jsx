@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import ObjectCode from "./components/About/ObjectCode";
 import Navbar from "./components/common/Navbar";
-import DotGrid from "./components/GSAP/DotGrid";
-import Particles from "./components/GSAP/particles";
+import Particles from "./components/GSAP/Particles";
 import ProfileCard from "./components/GSAP/ProfileCard";
 import TextCursor from "./components/GSAP/TextCursor";
 import mayursinh_chudasama from "./mayursinh-chudasama.png";
