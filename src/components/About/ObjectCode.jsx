@@ -79,7 +79,7 @@ export default function ObjectCode() {
               className={`text-sm font-mono flex items-center hover:bg-[#3D3D3D]  `}>
               <CollapsableBtn state={state.object} />
               {!state.object ? (
-                <div>
+                <div className='text-left'>
                   <span className='text-white'>{`{`}</span>
                   <span className='text-[#8f8f8f]'>info: </span>
                   <span className='text-white'>{`{…}, `}</span>
@@ -129,7 +129,7 @@ export default function ObjectCode() {
                   )}
                 </div>
                 {!state.info && (
-                  <div>
+                  <div className='p-2 text-left'>
                     <span className='text-[#71ACF8]'>{`info`}</span>
                     <span className='text-white'>{`:  `}</span>
                     <span className='text-white'>{`  {`}</span>
@@ -189,14 +189,14 @@ export default function ObjectCode() {
                   }}>
                   <CollapsableBtn state={state.skills.obj} />
                   {state.skills.obj && (
-                    <div>
+                    <div className=''>
                       <span className='text-[#71ACF8]'>{`skills`}</span>
                       <span className='text-white'>{`:  `}</span>
                     </div>
                   )}
                 </div>
                 {!state.skills.obj && (
-                  <div>
+                  <div className='p-2 text-left'>
                     <span className='text-[#71ACF8]'>{`skills`}</span>
                     <span className='text-white'>{`:  {`}</span>
                     <span className='text-[#8f8f8f]'>{`languages`}</span>

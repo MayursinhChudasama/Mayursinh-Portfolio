@@ -41,7 +41,7 @@ const ProfileCard = ({ imageUrl, className = "" }) => {
         <img
           src={imageUrl}
           alt='Card content'
-          className='w-125 h-125 object-cover rounded-lg shadow-lg transform-gpu'
+          className='md:w-25 md:h-25 lg:w-125 lg:h-125 object-cover rounded-lg shadow-lg transform-gpu'
           style={{ transform: "translateZ(40px)" }}
         />
       </div>

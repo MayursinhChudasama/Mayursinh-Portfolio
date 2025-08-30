@@ -41,7 +41,14 @@ export default function App() {
         <motion.div
           className='m-3 mt-7 inline-block w-[95%] max-w-2xl border-1 border-[#6b7280] rounded-md bg-transparent z-10'
           whileHover={{
-            y: 10,
+            y: 8,
+            transition: {
+              duration: 0.3,
+              ease: "easeOut",
+            },
+          }}
+          whileTap={{
+            y: 12,
             transition: {
               duration: 0.3,
               ease: "easeOut",
