@@ -57,7 +57,7 @@ export default function App() {
                 firstContent={<ProfileCard imageUrl={mayursinh_chudasama} />}
                 secondContent={<ProfileCard imageUrl={mayursinh_chudasama2} />}
                 gridSize={25}
-                pixelColor='#ffffff'
+                pixelColor='#020817'
                 animationStepDuration={0.4}
                 className='custom-pixel-card'
               />
