@@ -6,7 +6,7 @@ import flowbiteLogo from "../../assets/flowbite.png";
 import htmlLogo from "../../assets/html.png";
 import javascriptLogo from "../../assets/javascript.png";
 import muiLogo from "../../assets/mui.png";
-import nextjsLogo from "../../assets/nextjs.png";
+import nextjsLogo from "../../assets/next.png";
 import reactLogo from "../../assets/react.png";
 import reactQueryLogo from "../../assets/react-query.png";
 import reactRouterDomLogo from "../../assets/react-router-dom.png";
