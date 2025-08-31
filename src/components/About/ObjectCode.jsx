@@ -1,6 +1,7 @@
 import React, { useReducer } from "react";
 import CollapsableBtn from "../common/CollapsableBtn";
 import SpotlightCard from "../GSAP/SpotlightCard";
+import ExperienceCounter from "./ExperienceCounter";
 
 function dispatchUI(state, action) {
   if (action.type == "OBJECT") {
@@ -87,6 +88,14 @@ export default function ObjectCode() {
                   <span className='text-[#8f8f8f]'>learning: </span>
                   <span
                     className={`${purpleColor} italic`}>{`'consistent'`}</span>
+                  <span className='text-white'>{`, `}</span>
+                  <span className='text-[#8f8f8f]'>title: </span>
+                  <span
+                    className={`${purpleColor} italic`}>{`'Frontend Developer'`}</span>
+                  <span className='text-white'>{`, `}</span>
+                  <span className='text-[#8f8f8f]'>experience: </span>
+                  <span
+                    className={`${purpleColor} italic`}>{`'1.5 years and counting...'`}</span>
                   <span className='text-white'>{`}`}</span>
                 </div>
               ) : (
@@ -111,8 +120,9 @@ export default function ObjectCode() {
               {/* experience */}
               <div className='ml-4.5 flex hover:bg-[#3D3D3D]'>
                 <span className='text-[#71ACF8]'>{`experience`}</span>
+                {/* <ExperienceCounter /> */}
                 <span
-                  className={`${purpleColor}`}>{`: "1 year, 6 month, counting"`}</span>
+                  className={`${purpleColor}`}>{`: "1.5 years and counting..."`}</span>
               </div>
               {/* INFO */}
               <div
