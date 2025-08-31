@@ -67,13 +67,7 @@ export default function SkillsContainer({ isMobile }) {
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
           {isMobile && (
-            <div className='pb-6 text-center'>
-              {/* <h3 className='text-xl font-semibold text-white mb-4'>
-                <span className='bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent'>
-                  {category.category}
-                </span>
-              </h3> */}
-
+            <div className='pb-3 text-center'>
               <SkillsCard
                 title={"Skills"}
                 items={skillsData.map((arr) => arr.items).flat()}
