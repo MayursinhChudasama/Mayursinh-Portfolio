@@ -55,7 +55,7 @@ const skillsData = [
   },
 ];
 
-export default function SkillsContainer() {
+export default function SkillsContainer({ isMobile }) {
   return (
     <section className='relative w-full py-16 md:py-16 bg-gradient-to-b from-transparent to-gray-900/5'>
       <div className='relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -66,25 +66,47 @@ export default function SkillsContainer() {
         </div>
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-          {skillsData.map((category, index) => (
-            <div
-              key={category.category}
-              className='pb-6 text-center'>
-              <h3 className='text-xl font-semibold text-white mb-4'>
+          {isMobile && (
+            <div className='pb-6 text-center'>
+              {/* <h3 className='text-xl font-semibold text-white mb-4'>
                 <span className='bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent'>
                   {category.category}
                 </span>
-              </h3>
+              </h3> */}
 
               <SkillsCard
-                title={category.category}
-                items={category.items}
-                columns={3}
+                title={"Skills"}
+                items={skillsData.map((arr) => arr.items).flat()}
+                columns={4}
+                itemWidth={50}
+                itemHeight={50}
                 className='bg-gray-900/20 backdrop-blur-lg rounded-2xl border border-gray-800/50 hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10'
-                delay={index * 0.1}
+                delay={1 * 0.1}
               />
             </div>
-          ))}
+          )}
+          {!isMobile &&
+            skillsData.map((category, index) => (
+              <div
+                key={category.category}
+                className='pb-6 text-center'>
+                <h3 className='text-xl font-semibold text-white mb-4'>
+                  <span className='bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent'>
+                    {category.category}
+                  </span>
+                </h3>
+
+                <SkillsCard
+                  title={category.category}
+                  items={category.items}
+                  columns={3}
+                  itemWidth={70}
+                  itemHeight={70}
+                  className='bg-gray-900/20 backdrop-blur-lg rounded-2xl border border-gray-800/50 hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10'
+                  delay={index * 0.1}
+                />
+              </div>
+            ))}
         </div>
       </div>
     </section>

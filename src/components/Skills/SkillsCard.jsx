@@ -4,7 +4,8 @@ import FallingEffect from "../GSAP/FallingEffect";
 
 export default function SkillsCard({
   items,
-  title = "",
+  itemHeight,
+  itemWidth,
   columns = 2,
   className = "",
   delay = 0,
@@ -34,7 +35,7 @@ export default function SkillsCard({
       variants={cardVariants}
       className={`relative flex flex-col h-130 overflow-hidden group ${className}`}>
       <div
-        className='flex-1 flex items-center justify-center p-4 cursor-pointer h-130'
+        className='flex-1 flex items-center justify-center p-4 cursor-pointer lg:h-130 sm:h-180'
         onClick={(e) => {
           e.stopPropagation();
           e.preventDefault();
@@ -44,8 +45,8 @@ export default function SkillsCard({
             items={items}
             columns={columns}
             gravity={0.5}
-            itemWidth={70}
-            itemHeight={70}
+            itemWidth={itemWidth}
+            itemHeight={itemHeight}
             gap={40}
             trigger='click'
             className='transition-transform duration-300 group-hover:scale-105'

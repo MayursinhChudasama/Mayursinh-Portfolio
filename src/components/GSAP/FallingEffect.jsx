@@ -283,13 +283,7 @@ const FallingEffect = ({
         key={`falling-effect-${resetKey}`}
         ref={containerRef}
         className='relative w-full flex-1 overflow-hidden group'
-        onClick={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          if (trigger === "click") {
-            handleTrigger(e);
-          }
-        }}
+        onClick={trigger === "click" ? handleTrigger : undefined}
         onMouseEnter={trigger === "hover" ? handleTrigger : undefined}
         style={{
           position: "relative",

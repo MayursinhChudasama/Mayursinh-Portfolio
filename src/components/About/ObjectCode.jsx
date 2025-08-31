@@ -108,6 +108,12 @@ export default function ObjectCode() {
                 <span
                   className={`${purpleColor}`}>{`: "Frontend Developer"`}</span>
               </div>
+              {/* experience */}
+              <div className='ml-4.5 flex hover:bg-[#3D3D3D]'>
+                <span className='text-[#71ACF8]'>{`experience`}</span>
+                <span
+                  className={`${purpleColor}`}>{`: "1 year, 6 month, counting"`}</span>
+              </div>
               {/* INFO */}
               <div
                 className={

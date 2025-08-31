@@ -142,13 +142,6 @@ const CardNav = ({
           isExpanded ? "open" : ""
         } block h-[60px] p-0 shadow-md relative overflow-hidden will-change-[height] rounded-none`}
         style={{ backgroundColor: baseColor }}>
-        {/* <div className='logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none'>
-          <img
-            src={logo}
-            alt={logoAlt}
-            className='logo h-[28px]'
-          />
-        </div> */}
         <div
           className={`card-nav-content absolute left-0 right-0 top-[60px] bottom-0 p-2 flex flex-col items-stretch gap-2 justify-start z-[1] ${
             isExpanded
@@ -186,7 +179,7 @@ const CardNav = ({
           <img
             src={logo}
             alt={logoAlt}
-            className='h-8'
+            className='h-9'
           />
         </div>
 
