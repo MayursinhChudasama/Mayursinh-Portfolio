@@ -14,9 +14,7 @@ const FallingEffect = ({
   gap = 20,
 }) => {
   const containerRef = useRef(null);
-  const textRef = useRef(null);
   const canvasContainerRef = useRef(null);
-
   const [effectStarted, setEffectStarted] = useState(trigger === "auto"); // Start automatically only if trigger is 'auto'
   const [resetKey, setResetKey] = useState(0); // Key to force re-render
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
@@ -39,25 +37,25 @@ const FallingEffect = ({
     return () => window.removeEventListener("resize", updateSize);
   }, []);
 
-  useEffect(() => {
-    if (trigger === "auto") {
-      setEffectStarted(true);
-      return;
-    }
-    if (trigger === "scroll" && containerRef.current) {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setEffectStarted(true);
-            observer.disconnect();
-          }
-        },
-        { threshold: 0.1 }
-      );
-      observer.observe(containerRef.current);
-      return () => observer.disconnect();
-    }
-  }, [trigger]);
+  // useEffect(() => {
+  //   if (trigger === "auto") {
+  //     setEffectStarted(true);
+  //     return;
+  //   }
+  //   if (trigger === "scroll" && containerRef.current) {
+  //     const observer = new IntersectionObserver(
+  //       ([entry]) => {
+  //         if (entry.isIntersecting) {
+  //           setEffectStarted(true);
+  //           observer.disconnect();
+  //         }
+  //       },
+  //       { threshold: 0.1 }
+  //     );
+  //     observer.observe(containerRef.current);
+  //     return () => observer.disconnect();
+  //   }
+  // }, [trigger]);
 
   useEffect(() => {
     if (!effectStarted) return;
@@ -212,30 +210,30 @@ const FallingEffect = ({
   ]);
 
   const handleTrigger = (e) => {
-    e?.preventDefault?.();
-    e?.stopPropagation?.();
+    e.preventDefault();
+    e.stopPropagation();
     if (!effectStarted) {
       setEffectStarted(true);
     }
   };
 
   const handleReset = (e) => {
-    e?.preventDefault?.();
-    e?.stopPropagation?.();
-    
+    e.preventDefault();
+    e.stopPropagation();
+
     // Reset physics world
     if (window.engine) {
       Matter.Engine.clear(window.engine);
       window.engine = null;
     }
-    
+
     // Reset state
     setEffectStarted(false);
-    setResetKey(prev => prev + 1); // Force re-render
-    
+    setResetKey((prev) => prev + 1); // Force re-render
+
     // Re-initialize after a small delay to allow state to update
     setTimeout(() => {
-      if (trigger === 'auto') {
+      if (trigger === "auto") {
         setEffectStarted(true);
       }
     }, 50);
@@ -251,77 +249,102 @@ const FallingEffect = ({
     };
   };
 
-  return (
-    <div
-      key={`falling-effect-${resetKey}`} // Add key to force re-render on reset
-      ref={containerRef}
-      className='relative w-full h-full overflow-hidden group'
-      onClick={(e) => {
-        e.stopPropagation();
-        e.preventDefault();
-        trigger === "click" ? handleTrigger(e) : undefined;
-      }}
-      onMouseEnter={trigger === "hover" ? handleTrigger : undefined}
-      style={{
-        position: "relative",
-        width: "100%",
-        height: "100%",
-        minHeight: "400px",
-      }}>
-      {/* Reset Button */}
-      {effectStarted && (
-        <button
-          onClick={handleReset}
-          className='absolute top-4 right-4 z-20 px-3 py-1.5 text-xs font-medium text-white bg-gray-800/80 hover:bg-gray-700/90 backdrop-blur-sm rounded-full border border-gray-700/50 shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-blue-500/50'
-          title='Reset animation'
-        >
-          Reset
-        </button>
-      )}
-      {/* Canvas for physics simulation - only show after click */}
-      {effectStarted && (
-        <div
-          ref={canvasContainerRef}
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            pointerEvents: "none",
-          }}
-        />
-      )}
+  // SVG Reset Icon
+  const ResetIcon = () => (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      className='h-4 w-4'
+      fill='none'
+      viewBox='0 0 24 24'
+      stroke='currentColor'>
+      <path
+        strokeLinecap='round'
+        strokeLinejoin='round'
+        strokeWidth={2}
+        d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
+      />
+    </svg>
+  );
 
-      {/* Items in grid layout that will fall on click */}
-      <div className='relative w-full h-full'>
-        {items.map((item, index) => {
-          const gridPos = calculateGridPosition(index);
-          return (
-            <div
-              key={item.id}
-              id={`falling-item-${item.id}`}
-              className='absolute flex items-center justify-center transition-transform duration-300 hover:scale-110'
-              style={{
-                width: `${itemWidth}px`,
-                height: `${itemHeight}px`,
-                left: `${gridPos.x}px`,
-                top: `${gridPos.y}px`,
-                transform: effectStarted
-                  ? "translate(-50%, -50%)"
-                  : "translate(-50%, -50%)",
-                cursor: "pointer",
-                transition: effectStarted ? "none" : "transform 0.3s ease-out",
-              }}>
-              <img
-                src={item.image}
-                alt={item.title}
-                className='w-22 h-22 object-contain'
-                title={item.title}
-              />
-            </div>
-          );
-        })}
+  return (
+    <div className='flex flex-col h-full'>
+      {effectStarted && (
+        <div className='flex justify-center mb-2'>
+          <button
+            onClick={handleReset}
+            className='flex items-center gap-1 px-3 py-1.5 text-xs font-medium text-gray-300 hover:text-white bg-gray-800/80 hover:bg-gray-700/90 backdrop-blur-sm rounded-full border border-gray-700/50 shadow-lg transition-all duration-300'
+            title='Reset animation'>
+            <ResetIcon />
+            {/* <span>Reset</span> */}
+          </button>
+        </div>
+      )}
+      <div
+        key={`falling-effect-${resetKey}`}
+        ref={containerRef}
+        className='relative w-full flex-1 overflow-hidden group'
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (trigger === "click") {
+            handleTrigger(e);
+          }
+        }}
+        onMouseEnter={trigger === "hover" ? handleTrigger : undefined}
+        style={{
+          position: "relative",
+          width: "100%",
+          minHeight: "400px",
+        }}>
+        {/* Canvas for physics simulation - only show after click */}
+        {effectStarted && (
+          <div
+            ref={canvasContainerRef}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              pointerEvents: "none",
+            }}
+          />
+        )}
+
+        {/* Items in grid layout that will fall on click */}
+        <div className='relative w-full h-full'>
+          {items.map((item, index) => {
+            const gridPos = calculateGridPosition(index);
+            return (
+              <div
+                key={item.id}
+                id={`falling-item-${item.id}`}
+                className='absolute flex flex-col items-center justify-center transition-transform duration-300 hover:scale-110'
+                style={{
+                  width: `${itemWidth}px`,
+                  height: `${itemHeight}px`,
+                  left: `${gridPos.x}px`,
+                  top: `${gridPos.y}px`,
+                  transform: effectStarted
+                    ? "translate(-50%, -50%)"
+                    : "translate(-50%, -50%)",
+                  cursor: "grab",
+                  transition: effectStarted
+                    ? "none"
+                    : "transform 0.3s ease-out",
+                }}>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  draggable={false}
+                  className='w-22 h-22 object-contain'
+                  title={item.title}
+                />
+                {/* <p>{item.title}</p> */}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

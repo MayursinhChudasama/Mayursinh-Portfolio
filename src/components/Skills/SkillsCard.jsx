@@ -32,29 +32,21 @@ export default function SkillsCard({
       whileInView='visible'
       viewport={{ once: true, margin: "-50px" }}
       variants={cardVariants}
-      className={`relative flex flex-col h-full overflow-hidden group ${className}`}>
-      <div className='p-6 pb-2'>
-        <h3 className='text-xl font-semibold text-white mb-4 flex items-center'>
-          <span className='bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent'>
-            {title}
-          </span>
-        </h3>
-      </div>
-
+      className={`relative flex flex-col h-130 overflow-hidden group ${className}`}>
       <div
-        className='flex-1 flex items-center justify-center p-4 cursor-pointer'
+        className='flex-1 flex items-center justify-center p-4 cursor-pointer h-130'
         onClick={(e) => {
           e.stopPropagation();
           e.preventDefault();
         }}>
-        <div className='w-full h-full min-h-[300px] relative'>
+        <div className='w-full h-full min-h-[400px] relative'>
           <FallingEffect
             items={items}
             columns={columns}
             gravity={0.5}
             itemWidth={70}
             itemHeight={70}
-            gap={10}
+            gap={40}
             trigger='click'
             className='transition-transform duration-300 group-hover:scale-105'
           />

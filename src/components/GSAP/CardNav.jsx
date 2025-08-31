@@ -192,26 +192,14 @@ const CardNav = ({
 
         {/* Navigation links on the right */}
         <div className='hidden md:flex items-center space-x-8'>
-          <a
-            href='#about'
-            className='text-[#9980FF] hover:text-gray-300 text-xl font-medium'>
-            ABOUT
-          </a>
-          <a
-            href='#skills'
-            className='text-[#9980FF] hover:text-gray-300 text-xl font-medium'>
-            SKILLS
-          </a>
-          <a
-            href='#projects'
-            className='text-[#9980FF] hover:text-gray-300 text-xl font-medium'>
-            PROJECTS
-          </a>
-          <a
-            href='#contact'
-            className='text-[#9980FF] hover:text-gray-300 text-xl font-medium'>
-            CONTACT
-          </a>
+          {["About", "Skills", "Projects", "Contact"].map((name, i) => (
+            <a
+              key={name}
+              href={`#${name.toLowerCase()}`}
+              className='text-[#9980FF] hover:text-gray-300 text-xl font-medium'>
+              {name}
+            </a>
+          ))}
         </div>
 
         {/* Hamburger menu (visible on mobile) */}
