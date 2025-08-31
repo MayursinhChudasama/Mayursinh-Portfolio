@@ -1,19 +1,20 @@
 import SkillsCard from "./SkillsCard";
-import javascriptLogo from "../../assets/javascript.png";
-import typescriptLogo from "../../assets/typescript.png";
-import htmlLogo from "../../assets/html.png";
-import cssLogo from "../../assets/css.png";
-import reactLogo from "../../assets/react.png";
-import nextjsLogo from "../../assets/nextjs.png";
-import reduxLogo from "../../assets/redux.png";
-import reactRouterDomLogo from "../../assets/react-router-dom.png";
-import reactQueryLogo from "../../assets/react-query.png";
 
-import tailwindLogo from "../../assets/tailwind.png";
-import sassLogo from "../../assets/sass.png";
-import muiLogo from "../../assets/mui.png";
-import flowbiteLogo from "../../assets/flowbite.png";
 import bootstrapLogo from "../../assets/bootstrape.png";
+import cssLogo from "../../assets/css.png";
+import flowbiteLogo from "../../assets/flowbite.png";
+import htmlLogo from "../../assets/html.png";
+import javascriptLogo from "../../assets/javascript.png";
+import muiLogo from "../../assets/mui.png";
+import nextjsLogo from "../../assets/nextjs.png";
+import reactLogo from "../../assets/react.png";
+import reactQueryLogo from "../../assets/react-query.png";
+import reactRouterDomLogo from "../../assets/react-router-dom.png";
+import reduxLogo from "../../assets/redux.png";
+import sassLogo from "../../assets/sass.png";
+import tailwindLogo from "../../assets/tailwind.png";
+import typescriptLogo from "../../assets/typescript.png";
+
 // Sample data - replace with your actual skill data
 const skillsData = [
   {
