@@ -53,10 +53,6 @@ export default function SkillsCard({
           />
         </div>
       </div>
-
-      <div className='absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500'>
-        <div className='absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 rounded-2xl'></div>
-      </div>
     </motion.div>
   );
 }

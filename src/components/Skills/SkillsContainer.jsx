@@ -75,7 +75,7 @@ export default function SkillsContainer({ isMobile }) {
                 columns={4}
                 itemWidth={50}
                 itemHeight={50}
-                className='bg-gray-900/20 backdrop-blur-lg rounded-2xl border border-gray-800/50 hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10'
+                className='bg-gray-900/20 backdrop-blur-lg rounded-2xl border border-blue-500/30 transition-all duration-300 shadow-2xl shadow-blue-500/10'
                 delay={1 * 0.1}
               />
             </div>
