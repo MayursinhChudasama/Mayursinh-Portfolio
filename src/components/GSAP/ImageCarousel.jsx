@@ -148,7 +148,7 @@ export default function ImageCarousel({
               transition={effectiveTransition}>
               <div>
                 <img
-                  className={`${height} ${width} p-5`}
+                  className={`p-5`}
                   draggable={false}
                   src={item}
                   alt={item}

@@ -7,9 +7,9 @@ export default function ProjectCard({ project, isMobile }) {
   return (
     <div className='px-6 mb-15 shadow-lg hover:shadow-xl transition-shadow duration-300 '>
       {isMobile && (
-        <div className='p-6 flex flex-row gap-8 justify-center rounded-2xl bg-gradient-to-r from-gray-900 to-gray-800'>
-          <div className='mb-4 '>
-            <div className='flex flex-col gap-8'>
+        <div className='p-6 flex flex-row gap-5 justify-center rounded-2xl bg-gradient-to-r from-gray-900 to-gray-800'>
+          <div className='mb-4'>
+            <div className='flex flex-col gap-1'>
               <div className='py-3 mx-1'>
                 <DecryptedText
                   text={title}
@@ -17,22 +17,22 @@ export default function ProjectCard({ project, isMobile }) {
                   encryptedClassName='text-3xl text-center font-bold text-[#9333ea]'
                 />
               </div>
-              {/* <div className='mt-2 text-center'>
-                <p className='text-gray-300 p-3 leading-relaxed text-xl'>
+              <div className='text-center'>
+                <p className='text-gray-300 p-3 leading-relaxed text-lg'>
                   {description}
                 </p>
-                <p className='text-gray-300 p-3 leading-relaxed text-xl'>
+                <p className='text-gray-300 p-3 leading-relaxed text-lg'>
                   {role}
                 </p>
-                <p className='text-gray-300 p-3 leading-relaxed text-xl'>
+                <p className='text-gray-300 p-3 leading-relaxed text-lg'>
                   Technologies Used:
                 </p>
-                <p className='text-gray-300 px-3 leading-relaxed text-lg'>
+                <p className='text-gray-300 px-3 leading-relaxed text-md'>
                   {t_used}
                 </p>
-              </div> */}
+              </div>
             </div>
-            <div className='relative'>
+            <div className='mt-5 relative'>
               <ImageCarousel
                 items={images}
                 height='h-70'

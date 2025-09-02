@@ -51,7 +51,9 @@ export default function App() {
       </div>
       <Navbar />
       {/* ABOUT */}
-      <div className='relative w-full overflow-hidden bg-transparent text-center z-10 shadow-md mt-15 mb-53'>
+      <div
+        id='home'
+        className='relative w-full overflow-hidden bg-transparent text-center z-10 shadow-md mt-15 mb-53'>
         <div className='rounded-full p-1 mt-15 inline-block align-top  bg-transparent'>
           {isMobile ? (
             <div className='sm:w-25 sm:h-25 md:w-125 md:h-125 lg:w-125 lg:h-125'>
@@ -89,15 +91,21 @@ export default function App() {
         </motion.div>
       </div>
       {/* SKILLS */}
-      <div className='relative mt-52 h-full text-center bg-transparent z-10'>
+      <div
+        id='skills'
+        className='relative mt-52 h-full text-center bg-transparent z-10'>
         <SkillsContainer isMobile={isMobile} />
       </div>
       {/* PROJECTS */}
-      <div className='relative mt-10 h-full text-center bg-transparent z-10'>
+      <div
+        id='projects'
+        className='relative mt-10 h-full text-center bg-transparent z-10'>
         <ProjectsContainer isMobile={isMobile} />
       </div>
       {/* Contact */}
-      <div className='relative mt-10 h-full text-center bg-transparent z-10'>
+      <div
+        id='contact'
+        className='relative mt-10 h-full text-center bg-transparent z-10'>
         <ContactContainer />
       </div>
     </div>

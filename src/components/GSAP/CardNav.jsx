@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import { Link } from "react-scroll";
 // use your own icon import if react-icons is not available
 // import { GoArrowUpRight } from "react-icons/go";
 
@@ -185,18 +186,19 @@ const CardNav = ({
 
         {/* Navigation links on the right */}
         <div className='hidden md:flex items-center space-x-8'>
-          {["About", "Skills", "Projects", "Contact"].map((name, i) => (
-            <a
-              key={name}
-              href={`#${name.toLowerCase()}`}
-              className='text-[#9980FF] hover:text-gray-300 text-xl font-medium'>
+          {["Home", "Skills", "Projects", "Contact"].map((name, i) => (
+            <Link
+              to={name.toLowerCase()}
+              className='text-[#9980FF] hover:text-gray-300 text-xl font-medium cursor-pointer'
+              smooth={true}
+              duration={500}>
               {name}
-            </a>
+            </Link>
           ))}
         </div>
 
         {/* Hamburger menu (visible on mobile) */}
-        <div className=' ml-6'>
+        <div className='lg:hidden ml-6'>
           <div
             className={`hamburger-menu ${
               isHamburgerOpen ? "open" : ""

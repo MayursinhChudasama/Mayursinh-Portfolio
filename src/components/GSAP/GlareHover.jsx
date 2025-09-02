@@ -71,42 +71,42 @@ const GlareHover = ({
   };
 
   return (
-    <AnimatedContent
-      distance={50}
-      direction='vertical'
-      reverse={false}
-      duration={1}
-      ease='bounce.out'
-      initialOpacity={0.2}
-      animateOpacity
-      scale={1.1}
-      threshold={0.2}
-      delay={0.1}>
-      <FadeContent
-        blur={true}
-        duration={800}
-        easing='ease-out'
-        initialOpacity={0}>
+    // <AnimatedContent
+    //   distance={50}
+    //   direction='vertical'
+    //   reverse={false}
+    //   duration={1}
+    //   ease='bounce.out'
+    //   initialOpacity={0.2}
+    //   animateOpacity
+    //   scale={1.1}
+    //   threshold={0.2}
+    //   delay={0.1}>
+    <FadeContent
+      blur={true}
+      duration={800}
+      easing='ease-out'
+      initialOpacity={0}>
+      <div
+        className={`relative overflow-hidden rounded-lg ${width} ${className}`}
+        style={{
+          ...style,
+        }}
+        onClick={() => {
+          const el = overlayRef.current;
+          if (!el) return;
+          animateIn();
+        }}
+        onMouseEnter={animateIn}
+        onMouseLeave={animateOut}>
         <div
-          className={`relative overflow-hidden rounded-lg ${width} ${className}`}
-          style={{
-            ...style,
-          }}
-          onClick={() => {
-            const el = overlayRef.current;
-            if (!el) return;
-            animateIn();
-          }}
-          onMouseEnter={animateIn}
-          onMouseLeave={animateOut}>
-          <div
-            ref={overlayRef}
-            style={overlayStyle}
-          />
-          {children}
-        </div>
-      </FadeContent>
-    </AnimatedContent>
+          ref={overlayRef}
+          style={overlayStyle}
+        />
+        {children}
+      </div>
+    </FadeContent>
+    // </AnimatedContent>
   );
 };
 
