@@ -14,6 +14,7 @@ import reduxLogo from "../../assets/redux.png";
 import sassLogo from "../../assets/sass.png";
 import tailwindLogo from "../../assets/tailwind.png";
 import typescriptLogo from "../../assets/typescript.png";
+import Heading from "../common/Heading";
 
 // Sample data - replace with your actual skill data
 const skillsData = [
@@ -60,11 +61,7 @@ export default function SkillsContainer({ isMobile }) {
   return (
     <section className='relative w-full py-16 md:py-16 bg-gradient-to-b from-transparent to-gray-900/5'>
       <div className='relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='text-center mb-16'>
-          <h2 className='text-4xl p-2 md:text-5xl font-bold bg-clip-text text-transparent bg-[#947CF6]  mb-4'>
-            My Stack
-          </h2>
-        </div>
+        <Heading headingText='My Stack' />
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
           {isMobile && (

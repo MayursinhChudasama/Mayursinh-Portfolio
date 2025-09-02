@@ -8,6 +8,8 @@ const GAP = 16;
 const SPRING_OPTIONS = { type: "spring", stiffness: 300, damping: 30 };
 
 export default function ImageCarousel({
+  width,
+  height,
   items = [],
   baseWidth = 1200,
   autoplay = false,
@@ -106,10 +108,9 @@ export default function ImageCarousel({
   return (
     <div
       ref={containerRef}
-      className='relative overflow-hidden rounded-[24px] border-2 border-[#6B7280] flex flex-col'
+      className={`relative overflow-hidden rounded-[24px] border-2 border-[#6B7280] flex flex-col ${height} ${width}`}
       style={{
         width: `${baseWidth}px`,
-        minHeight: "500px",
       }}>
       <motion.div
         className='flex'
@@ -139,7 +140,7 @@ export default function ImageCarousel({
           return (
             <motion.div
               key={index}
-              className={`relative shrink-0 p-2   bg-transparent rounded-[12px] overflow-hidden cursor-grab active:cursor-grabbing`}
+              className={`relative shrink-0 p-2 bg-transparent rounded-[12px] overflow-hidden cursor-grab active:cursor-grabbing`}
               style={{
                 width: "100%",
                 rotateY: rotateY,
@@ -147,7 +148,7 @@ export default function ImageCarousel({
               transition={effectiveTransition}>
               <div>
                 <img
-                  className='h-full w-full p-5'
+                  className={`${height} ${width} p-5`}
                   draggable={false}
                   src={item}
                   alt={item}

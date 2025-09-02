@@ -1,4 +1,6 @@
 import ProjectCard from "./ProjectCard";
+import Heading from "../common/Heading";
+
 //
 import inv_image_1 from "../../assets/projects/inv-1.png";
 import inv_image_2 from "../../assets/projects/inv-2.png";
@@ -33,13 +35,12 @@ export default function ProjectsContainer({ isMobile }) {
       ],
     },
     {
-      title: `Tech-Pack Creator
-      Web App`,
+      title: "Tech-Pack Creator App",
       description:
         "An intuitive web-app for fashion designers to create, manage, update and export detailed tech packs through a central interface, significantly streamlining the garment design process.",
       role: "Designed the central settings module, Implemented a cascading update feature where a change in global settings automatically propagates to all existing tech-packs which can be viewed or exported as PDF.",
       t_used: "React JS, jsPDF, Tailwind CSS",
-      images: [tp_image_1, tp_image_2, tp_image_3, tp_image_4, tp_image_5],
+      images: [tp_image_1, tp_image_3, tp_image_2, tp_image_4, tp_image_5],
     },
     {
       title: "Inventory Management System",
@@ -53,14 +54,12 @@ export default function ProjectsContainer({ isMobile }) {
   ];
   return (
     <section className=''>
-      <div className='text-center mb-16'>
-        <h2 className='text-4xl md:text-5xl p-2 font-bold bg-clip-text text-transparent bg-[#947CF6] mb-4'>
-          My Projects
-        </h2>
-      </div>
+      <Heading headingText='My Projects' />
+
       <div>
         {projectsData.map((project, index) => (
           <ProjectCard
+            isMobile={isMobile}
             key={index}
             project={project}
           />

@@ -10,6 +10,7 @@ import SkillsContainer from "./components/Skills/SkillsContainer";
 import PixelTransition from "./components/GSAP/PixelTransition";
 import { useEffect, useState } from "react";
 import ProjectsContainer from "./components/Projects/ProjectsContainer";
+import ContactContainer from "./components/Contact/ContactContainer";
 
 export default function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -94,6 +95,10 @@ export default function App() {
       {/* PROJECTS */}
       <div className='relative mt-10 h-full text-center bg-transparent z-10'>
         <ProjectsContainer isMobile={isMobile} />
+      </div>
+      {/* Contact */}
+      <div className='relative mt-10 h-full text-center bg-transparent z-10'>
+        <ContactContainer />
       </div>
     </div>
   );
