@@ -61,8 +61,8 @@ export default function SkillsContainer({ isMobile }) {
     <section className='relative w-full py-16 md:py-16 bg-gradient-to-b from-transparent to-gray-900/5'>
       <div className='relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='text-center mb-16'>
-          <h2 className='text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-400 mb-4'>
-            Skills
+          <h2 className='text-4xl p-2 md:text-5xl font-bold bg-clip-text text-transparent bg-[#947CF6]  mb-4'>
+            My Stack
           </h2>
         </div>
 

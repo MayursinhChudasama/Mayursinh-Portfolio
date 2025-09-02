@@ -9,6 +9,7 @@ import mayursinh_chudasama2 from "./assets/mayursinh-chudasama2.png";
 import SkillsContainer from "./components/Skills/SkillsContainer";
 import PixelTransition from "./components/GSAP/PixelTransition";
 import { useEffect, useState } from "react";
+import ProjectsContainer from "./components/Projects/ProjectsContainer";
 
 export default function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -89,6 +90,10 @@ export default function App() {
       {/* SKILLS */}
       <div className='relative mt-52 h-full text-center bg-transparent z-10'>
         <SkillsContainer isMobile={isMobile} />
+      </div>
+      {/* PROJECTS */}
+      <div className='relative mt-10 h-full text-center bg-transparent z-10'>
+        <ProjectsContainer isMobile={isMobile} />
       </div>
     </div>
   );
