@@ -13,8 +13,8 @@ export default function ProjectCard({ project, isMobile }) {
               <div className='py-3 mx-1'>
                 <DecryptedText
                   text={title}
-                  className='text-3xl text-center font-bold text-[#9333ea] '
-                  encryptedClassName='text-3xl text-center font-bold text-[#9333ea]'
+                  className='text-3xl text-center font-bold text-indigo-400 '
+                  encryptedClassName='text-3xl text-center font-bold text-indigo-400'
                 />
               </div>
               <div className='text-center'>
@@ -53,8 +53,8 @@ export default function ProjectCard({ project, isMobile }) {
             <div className='py-3 mx-1'>
               <DecryptedText
                 text={title}
-                className='text-5xl  text-center font-bold text-[#9333ea] '
-                encryptedClassName='text-5xl  text-center font-bold text-[#9333ea]'
+                className='text-5xl  text-center font-bold text-indigo-400 '
+                encryptedClassName='text-5xl  text-center font-bold text-indigo-400'
               />
             </div>
             <div className='mt-20'>

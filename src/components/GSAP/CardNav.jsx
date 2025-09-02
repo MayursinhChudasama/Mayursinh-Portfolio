@@ -188,6 +188,7 @@ const CardNav = ({
         <div className='hidden md:flex items-center space-x-8'>
           {["Home", "Skills", "Projects", "Contact"].map((name, i) => (
             <Link
+              key={name}
               to={name.toLowerCase()}
               className='text-[#9980FF] hover:text-gray-300 text-xl font-medium cursor-pointer'
               smooth={true}

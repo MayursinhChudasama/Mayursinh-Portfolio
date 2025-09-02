@@ -151,7 +151,7 @@ export default function ObjectCode() {
                     <span className='text-[#8f8f8f]'>{`full_name`}</span>
                     <span className='text-white'>{`:  `}</span>
                     <span className='text-white'>{`{...}, `}</span>
-                    <span className='text-[#8f8f8f]'>{`contact_num`}</span>
+                    <span className='text-[#8f8f8f]'>{`linked_in`}</span>
                     <span className='text-white'>{`:  `}</span>
                     <span className='text-white'>{`{...}, `}</span>
                     <span className='text-[#8f8f8f]'>{`email_address`}</span>
@@ -169,10 +169,10 @@ export default function ObjectCode() {
                         className={`${purpleColor}`}>{`'Mayursinh Chudasama'`}</span>
                     </div>
                     <div className='hover:bg-[#3D3D3D]'>
-                      <span className='text-[#71ACF8]'>{`contact_num`}</span>
+                      <span className='text-[#71ACF8]'>{`linked_in`}</span>
                       <span className='text-white'>{`: `}</span>
                       <span
-                        className={`${purpleColor}`}>{`'+91 88668 68324'`}</span>
+                        className={`${purpleColor}`}>{`'www.linkedin.com/in/mayursinh-chudasama'`}</span>
                     </div>
                     <div className='hover:bg-[#3D3D3D]'>
                       <span className='text-[#71ACF8]'>{`email_address`}</span>
