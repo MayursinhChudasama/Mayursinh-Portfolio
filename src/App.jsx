@@ -65,7 +65,7 @@ export default function App() {
         className='relative mt-10 h-full text-center bg-transparent z-10'>
         <ProjectsContainer isMobile={isMobile} />
       </div>
-      {/* Contact */}
+      {/* Contact Page*/}
       <div
         id='contact'
         className='relative mt-10 h-full text-center bg-transparent z-10'>
