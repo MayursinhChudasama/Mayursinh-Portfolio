@@ -2,10 +2,12 @@ import DecryptedText from "../GSAP/DecryptedText";
 import ImageCarousel from "../GSAP/ImageCarousel";
 
 export default function ProjectCard({ project, isMobile }) {
-  const { title, description, images, role, t_used } = project;
+  const { id, title, description, images, role, t_used } = project;
   // start----
   return (
-    <div className='px-6 mb-15 shadow-lg hover:shadow-xl transition-shadow duration-300 '>
+    <div
+      id={id}
+      className='px-6 mb-15 shadow-lg hover:shadow-xl transition-shadow duration-300 '>
       {isMobile && (
         <div className='p-6 flex flex-row gap-5 justify-center rounded-2xl bg-gradient-to-r from-gray-900 to-gray-800'>
           <div className='mb-4'>

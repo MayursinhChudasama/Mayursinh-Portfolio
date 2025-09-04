@@ -21,6 +21,7 @@ import tp_image_5 from "../../assets/projects/tp-5.png";
 export default function ProjectsContainer({ isMobile }) {
   const projectsData = [
     {
+      id: "admin-panel-for-barisceano",
       title: "Admin Panel for BARISCEANO",
       description:
         " A centralized web panel for managing the entire e-commerce workflow, from product cataloging to real-time order tracking and dispatch coordination with DHL integration.",
@@ -35,6 +36,7 @@ export default function ProjectsContainer({ isMobile }) {
       ],
     },
     {
+      id: "tech-pack-creator-app",
       title: "Tech-Pack Creator App",
       description:
         "An intuitive web-app for fashion designers to create, manage, update and export detailed tech packs through a central interface, significantly streamlining the garment design process.",
@@ -43,6 +45,7 @@ export default function ProjectsContainer({ isMobile }) {
       images: [tp_image_1, tp_image_3, tp_image_2, tp_image_4, tp_image_5],
     },
     {
+      id: "inventory-management-system",
       title: "Inventory Management System",
       description:
         "An inventory management solution for a mobile cover manufacturer featuring a challan system to track transactions between suppliers and buyers with real-time stock updates.",

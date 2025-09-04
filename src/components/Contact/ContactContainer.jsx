@@ -32,7 +32,7 @@ export default function ContactContainer({ isMobile }) {
             {/* Social Icons */}
             <div className='flex gap-4 items-center justify-center'>
               <a
-                href='https:www.linkedin.com/in/mayursinh-chudasama'
+                href='https://www.linkedin.com/in/mayursinh-chudasama'
                 className='p-3 rounded-xl bg-gray-800 hover:bg-gray-700 transition'>
                 <FaLinkedin size={30} />
               </a>
